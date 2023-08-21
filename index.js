@@ -21,17 +21,17 @@ function streamByLines(stream) {
 async function line() {
    for await (const line of streamByLines(process.stdin)) 
   {
-  return line
+  return JSON.parse(line)
   }
 }
 
 fastify.post("/refresh", (req,res) => {
   if (req.body) {
     console.log("repl.deploy" + req.data + req.headers["Signature"])
-    const result = JSON.parse((await line()));
-    res.status(result.status)
-    res.send(result.body)
-    console.log("repl.deploy-success")
+    const result = await line();
+    res.status(result.status);
+    res.send(result.body);
+    console.log("repl.deploy-success");
   }
 })
 
