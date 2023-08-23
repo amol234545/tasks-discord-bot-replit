@@ -27,7 +27,7 @@ async function line() {
 
 fastify.post("/refresh", async (req,res) => {
   if (req.body) {
-    console.log("repl.deploy" + req.data + req.headers["Signature"])
+    console.log("repl.deploy" + req.body + req.headers["Signature"])
     const result = await line();
     res.status(result.status);
     console.log("repl.deploy-success");
