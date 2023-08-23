@@ -24,7 +24,7 @@ async function line() {
   return JSON.parse(line)
   }
 }
-
+fastify.get("/",(req,res) => {res.send("lollo")})
 fastify.post("/refresh", async (req,res) => {
   if (req.body) {
     console.log("repl.deploy" + req.body + req.headers["Signature"])
