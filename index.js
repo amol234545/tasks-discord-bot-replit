@@ -34,5 +34,11 @@ fastify.post("/refresh", async (req,res) => {
     res.send(result.body);
   }
 })
+fastify.addHook('onResponse', (request, reply, done) => {
+  if (request.routeOptions.url == "/refresh") {
+    console.log("repl.deploy-success");
+  }
+  done()
+})
 
 fastify.listen({host:"0.0.0.0",port:3000})
