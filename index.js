@@ -30,8 +30,8 @@ fastify.post("/refresh", async (req,res) => {
     console.log("repl.deploy" + req.data + req.headers["Signature"])
     const result = await line();
     res.status(result.status);
-    res.send(result.body);
     console.log("repl.deploy-success");
+    res.send(result.body);
   }
 })
 
