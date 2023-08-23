@@ -1,5 +1,5 @@
 hidden = [".config", "package-lock.json"]
-run="./repl.deploy --standalone node index.js"
+run="./repl.deploy node index.js"
 
 [[hints]]
 regex = "Error \\[ERR_REQUIRE_ESM\\]"
