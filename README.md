@@ -1,1 +1,1 @@
-# spotify-discord-bot-replit
+# tasks-discord-bot-replit
